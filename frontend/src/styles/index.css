@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    @apply bg-dark-900 text-white font-sans antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-dark-800; }
+  ::-webkit-scrollbar-thumb { @apply bg-claret-800 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-claret-700; }
+}
+
+@layer components {
+  .btn-claret {
+    @apply bg-claret-800 hover:bg-claret-700 text-white font-semibold
+           px-6 py-2.5 uppercase tracking-widest text-sm
+           transition-all duration-200 inline-block cursor-pointer;
+  }
+  .btn-outline {
+    @apply border border-white/30 hover:border-white text-white font-semibold
+           px-6 py-2.5 uppercase tracking-widest text-sm
+           transition-all duration-200 inline-block cursor-pointer;
+  }
+  .section-title {
+    @apply font-display text-4xl md:text-5xl tracking-wider uppercase text-white;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40;
+  }
+  .input-dark {
+    @apply w-full bg-dark-800 border border-white/10 focus:border-claret-700
+           text-white px-4 py-3 text-sm outline-none transition-colors
+           placeholder:text-white/20;
+  }
+}
