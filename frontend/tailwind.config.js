@@ -4,14 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
+        // claret: {
+        //   200: '#f9a8c4',
+        //   400: '#f472a0',
+        //   600: '#d92055',
+        //   700: '#b91542',
+        //   800: '#6C1D45',
+        //   900: '#5a1239',
+        //   950: '#3b0a25',
+        // },
         claret: {
-          200: '#f9a8c4',
-          400: '#f472a0',
-          600: '#d92055',
-          700: '#b91542',
-          800: '#6C1D45',
-          900: '#5a1239',
-          950: '#3b0a25',
+          200: '#bfdbfe',
+          400: '#60a5fa',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e3a8a',
+          900: '#1e3a6e',
+          950: '#172554',
         },
         gold: {
           400: '#F5C842',
@@ -31,7 +40,7 @@ export default {
         sans:    ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'claret-gradient': 'linear-gradient(135deg, #6C1D45 0%, #3b0a25 100%)',
+        'claret-gradient': 'linear-gradient(135deg, #1e3a8a 0%, #172554 100%)',
       },
     },
   },

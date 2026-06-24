@@ -79,7 +79,7 @@ const MatchesPage = () => {
               </div>
               {showTable && (
                 <div className="p-3">
-                  <LeagueTable highlightTeam="Burnley" />
+                  <LeagueTable highlightTeam="Likhu Bhujee RYC" />
                 </div>
               )}
               {!showTable && (
@@ -96,9 +96,9 @@ const MatchesPage = () => {
             <p className="text-yellow-400 text-xs uppercase tracking-widest mb-1 font-semibold">Season Tickets</p>
             <h3 className="font-display text-2xl text-white uppercase tracking-wide mb-3">2025/26 Now On Sale</h3>
             <p className="text-white/60 text-xs leading-relaxed mb-5">
-              Secure your seat at Turf Moor for the upcoming season.
+              Secure your seat at Amrit Gamchaya for the upcoming season.
             </p>
-            <a href="https://www.eticketing.co.uk/burnleyfc" target="_blank" rel="noreferrer"
+            <a href="#" target="_blank" rel="noreferrer"
               className="block text-center bg-yellow-500 hover:bg-yellow-400 text-dark-900 font-bold py-3 uppercase tracking-widest text-xs transition-all duration-200">
               Buy Season Ticket
             </a>

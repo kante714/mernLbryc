@@ -83,7 +83,7 @@ const SubscriptionCTA = () => (
   </div>
 );
 
-const ClaretsPlusPage = () => {
+const LibhuraPlusPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [category, setCategory] = useState(searchParams.get('category') || '');
   const [videos, setVideos] = useState([]);
@@ -133,4 +133,4 @@ const ClaretsPlusPage = () => {
   );
 };
 
-export default ClaretsPlusPage;
+export default LibhuraPlusPage;

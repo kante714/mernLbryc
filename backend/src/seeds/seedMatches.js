@@ -5,119 +5,113 @@ const daysAgo = (d) => new Date(now.getTime() - d * 24 * 60 * 60 * 1000);
 
 const matches = [
   // ── MEN – RESULTS ──────────────────────────────────────────────
+   {
+    homeTeam: 'Likhu Bhujee RYC', awayTeam: 'Humla FA',
+    homeScore: 6, awayScore: 1,
+    date: daysAgo(25), venue: 'Anfa Complex, Kathmandu',
+    competition: 'C division qualifier', status: 'result', team: 'men',
+  },
   {
-    homeTeam: 'Burnley', awayTeam: 'AFC Bournemouth',
+    homeTeam: 'We Are Brothers', awayTeam: 'Likhu Bhujee RYC',
+    homeScore: 2, awayScore: 2,
+    date: daysAgo(21), venue: 'Anfa Complex, Kathmandu',
+    competition: 'C division qualifier', status: 'result', team: 'men',
+  },
+  {
+    homeTeam: 'Likhu Bhujee RYC', awayTeam: 'Bhamti Bhandar',
+    homeScore: 1, awayScore: 0,
+    date: daysAgo(11), venue: 'Amrit Gamchaya, Bhujee',
+    competition: 'Bhujee League', status: 'result', team: 'men',
+    matchReportSlug: 'match-report-likhu-bhujee-1-0-bhamti-bhandar',
+  },
+  {
+    homeTeam: 'Bigu', awayTeam: 'Likhu Bhujee RYC',
     homeScore: 0, awayScore: 0,
-    date: daysAgo(11), venue: 'Turf Moor, Burnley',
-    competition: 'Championship', status: 'result', team: 'men',
-    matchReportSlug: 'match-report-burnley-0-0-afc-bournemouth',
+    date: daysAgo(14), venue: 'Amrit Gamchaya, Bhujee',
+    competition: 'Bhujee League', status: 'result', team: 'men',
   },
   {
-    homeTeam: 'Leeds United', awayTeam: 'Burnley',
-    homeScore: 2, awayScore: 1,
-    date: daysAgo(14), venue: 'Elland Road, Leeds',
-    competition: 'Championship', status: 'result', team: 'men',
-  },
-  {
-    homeTeam: 'Burnley', awayTeam: 'Sunderland',
+    homeTeam: 'Likhu Bhujee RYC', awayTeam: 'United Rasnalu',
     homeScore: 2, awayScore: 0,
-    date: daysAgo(17), venue: 'Turf Moor, Burnley',
-    competition: 'Championship', status: 'result', team: 'men',
-  },
-  {
-    homeTeam: 'Sheffield United', awayTeam: 'Burnley',
-    homeScore: 1, awayScore: 1,
-    date: daysAgo(21), venue: 'Bramall Lane, Sheffield',
-    competition: 'Championship', status: 'result', team: 'men',
-  },
-  {
-    homeTeam: 'Burnley', awayTeam: 'Stoke City',
-    homeScore: 3, awayScore: 1,
-    date: daysAgo(25), venue: 'Turf Moor, Burnley',
-    competition: 'Championship', status: 'result', team: 'men',
-  },
-  {
-    homeTeam: 'Coventry City', awayTeam: 'Burnley',
-    homeScore: 0, awayScore: 2,
-    date: daysAgo(28), venue: 'Coventry Building Society Arena',
-    competition: 'Championship', status: 'result', team: 'men',
+    date: daysAgo(17), venue: 'Amrit Gamchaya, Bhujee',
+    competition: 'Bhujee League', status: 'result', team: 'men',
   },
 
   // ── MEN – UPCOMING ─────────────────────────────────────────────
   {
-    homeTeam: 'Burnley', awayTeam: 'Norwich City',
-    date: daysFromNow(4), venue: 'Turf Moor, Burnley',
-    competition: 'Championship', status: 'upcoming', team: 'men',
-    broadcastInfo: 'Sky Sports',
-    ticketUrl: 'https://www.eticketing.co.uk/burnleyfc',
+    homeTeam: 'Likhu Bhujee RYC', awayTeam: 'TBD',
+    date: daysFromNow(4), venue: 'TBD',
+    competition: 'TBD', status: 'upcoming', team: 'men',
+    broadcastInfo: 'Deepak4able',
+    ticketUrl: '#',
   },
   {
-    homeTeam: 'Millwall', awayTeam: 'Burnley',
-    date: daysFromNow(11), venue: 'The Den, London',
-    competition: 'Championship', status: 'upcoming', team: 'men',
-    broadcastInfo: 'Sky Sports',
+    homeTeam: 'TBD', awayTeam: 'Likhu Bhujee RYC',
+    date: daysFromNow(11), venue: 'TBD',
+    competition: 'TBD', status: 'upcoming', team: 'men',
+    broadcastInfo: 'Deepak4able',
   },
   {
-    homeTeam: 'Burnley', awayTeam: 'Bristol City',
-    date: daysFromNow(18), venue: 'Turf Moor, Burnley',
-    competition: 'Championship', status: 'upcoming', team: 'men',
-    ticketUrl: 'https://www.eticketing.co.uk/burnleyfc',
+    homeTeam: 'Likhu Bhujee RYC', awayTeam: 'TBD',
+    date: daysFromNow(18), venue: 'TBD',
+    competition: 'TBD', status: 'upcoming', team: 'men',
+    ticketUrl: '#',
   },
   {
-    homeTeam: 'Swansea City', awayTeam: 'Burnley',
-    date: daysFromNow(25), venue: 'Swansea.com Stadium',
-    competition: 'Championship', status: 'upcoming', team: 'men',
+    homeTeam: 'Likhu Bhujee RYC', awayTeam: 'TBD',
+    date: daysFromNow(25), venue: 'TBD',
+    competition: 'TBD', status: 'upcoming', team: 'men',
   },
 
   // ── WOMEN – RESULTS ────────────────────────────────────────────
   {
-    homeTeam: "Burnley Women", awayTeam: "Wolverhampton Wanderers Women",
+    homeTeam: "Likhu Bhujee RYC", awayTeam: "We Are Brothers Women",
     homeScore: 1, awayScore: 0,
-    date: daysAgo(10), venue: 'Turf Moor, Burnley',
+    date: daysAgo(10), venue: 'Amrit Gamchaya, Bhujee',
     competition: "Women's Championship", status: 'result', team: 'women',
   },
   {
-    homeTeam: "Leicester City Women", awayTeam: "Burnley Women",
+    homeTeam: "Okhaldunga Women", awayTeam: "Likhu Bhujee RYC",
     homeScore: 2, awayScore: 1,
-    date: daysAgo(17), venue: 'King Power Stadium',
+    date: daysAgo(17), venue: 'Okhaldunga Stadium, Okhaldunga',
     competition: "Women's Championship", status: 'result', team: 'women',
   },
 
   // ── WOMEN – UPCOMING ───────────────────────────────────────────
   {
-    homeTeam: "Burnley Women", awayTeam: "Sheffield United Women",
-    date: daysFromNow(5), venue: 'Turf Moor, Burnley',
-    competition: "Women's Championship", status: 'upcoming', team: 'women',
+    homeTeam: "Likhu Bhujee RYC", awayTeam: "TBD",
+    date: daysFromNow(5), venue: 'TBD',
+    competition: "TBD", status: 'upcoming', team: 'women',
   },
   {
-    homeTeam: "Charlton Athletic Women", awayTeam: "Burnley Women",
-    date: daysFromNow(12), venue: 'The Valley, London',
-    competition: "Women's Championship", status: 'upcoming', team: 'women',
+    homeTeam: "TBD", awayTeam: "Likhu Bhujee RYC",
+    date: daysFromNow(12), venue: 'TBD',
+    competition: "TBD", status: 'upcoming', team: 'women',
   },
 
   // ── UNDER-21 ───────────────────────────────────────────────────
   {
-    homeTeam: 'Burnley U21', awayTeam: 'Brighton & Hove Albion U21',
-    homeScore: 0, awayScore: 2,
-    date: daysAgo(9), venue: 'Turf Moor, Burnley',
-    competition: 'PL2', status: 'result', team: 'under-21',
+    homeTeam: 'Likhu Bhujee RYC U21', awayTeam: 'Bhamti Bhandar U21',
+    homeScore: 0, awayScore: 0,
+    date: daysAgo(9), venue: 'Army Ground, Kathmandu',
+    competition: 'Friendly', status: 'result', team: 'under-21',
   },
   {
-    homeTeam: 'Burnley U21', awayTeam: 'Preston North End U21',
-    date: daysFromNow(6), venue: 'Barnfield Training Centre',
-    competition: 'PL2', status: 'upcoming', team: 'under-21',
+    homeTeam: 'Likhu Bhujee RYC U21', awayTeam: 'We Are Brothers U21',
+    date: daysFromNow(6), venue: 'NSF Ground, Kathmandu',
+    competition: 'Friendly', status: 'upcoming', team: 'under-21',
   },
 
   // ── UNDER-18 ───────────────────────────────────────────────────
   {
-    homeTeam: 'Burnley U18', awayTeam: 'Blackburn Rovers U18',
+    homeTeam: 'Likhu Bhujee RYC U18', awayTeam: 'Bhamti Bhandar U18',
     homeScore: 2, awayScore: 1,
-    date: daysAgo(12), venue: 'Barnfield Training Centre',
+    date: daysAgo(12), venue: 'NSF Ground, Kathmandu',
     competition: 'U18 League', status: 'result', team: 'under-18',
   },
   {
-    homeTeam: 'Burnley U18', awayTeam: 'Bolton Wanderers U18',
-    date: daysFromNow(7), venue: 'Barnfield Training Centre',
+    homeTeam: 'Likhu Bhujee RYC U18', awayTeam: 'We Are Brothers U18',
+    date: daysFromNow(7), venue: 'NSF Ground, Kathmandu',
     competition: 'U18 League', status: 'upcoming', team: 'under-18',
   },
 ];

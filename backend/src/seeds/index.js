@@ -30,8 +30,8 @@ const seed = async () => {
 
   console.log('👤 Seeding users...');
   await User.create([
-    { name: 'Admin',    email: 'admin@burnleyfc.com', password: 'admin123', role: 'admin' },
-    { name: 'Test Fan', email: 'fan@burnleyfc.com',   password: 'fan12345', role: 'subscriber' },
+    { name: 'Admin',    email: 'admin@lbryc.com', password: 'admin123', role: 'admin' },
+    { name: 'Test Fan', email: 'fan@lbryc.com',   password: 'fan12345', role: 'subscriber' },
   ]);
 
   console.log('📰 Seeding articles...');
@@ -50,8 +50,8 @@ const seed = async () => {
   await Video.insertMany(videos);
 
   console.log('\n✅ Seed complete!');
-  console.log('   Admin:      admin@burnleyfc.com / admin123');
-  console.log('   Subscriber: fan@burnleyfc.com   / fan12345');
+  console.log('   Admin:      admin@lbryc.com / admin123');
+  console.log('   Subscriber: fan@lbryc.com   / fan12345');
   process.exit(0);
 };
 

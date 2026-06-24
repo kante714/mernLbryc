@@ -1,6 +1,6 @@
-# Burnley FC — MERN Application
+# Likhu Bhujee Ramechhap Youth Club — MERN Application
 
-Official Burnley FC website clone built with the MERN stack.
+Official Likhue Bhujee Ramechhap Youth Club website clone built with the MERN stack.
 
 ## Tech Stack
 - **Frontend**: React 18 + Vite + Tailwind CSS + React Router v6
@@ -38,5 +38,5 @@ See DEPLOYMENT.md for full step-by-step instructions.
 ## Test Credentials
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@burnleyfc.com | admin123 |
-| Subscriber | fan@burnleyfc.com | fan12345 |
+| Admin | admin@lbryc.com | admin123 |
+| Subscriber | fan@lbryc.com | fan12345 |

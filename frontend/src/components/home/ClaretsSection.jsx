@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import { SectionHeader } from '../ui';
 
 const PREVIEW_VIDEOS = [
-  { id: 1, title: 'HIGHLIGHTS: Burnley 0-0 AFC Bournemouth', category: 'highlights', thumbnail: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600', duration: '5:14', premium: true },
-  { id: 2, title: 'PARKER: Post-Match Reaction vs Bournemouth', category: 'interviews', thumbnail: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600', duration: '3:42', premium: true },
-  { id: 3, title: 'TRAINING: Clarets Prepare for Arsenal', category: 'training', thumbnail: 'https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=600', duration: '4:07', premium: true },
-  { id: 4, title: 'WOMEN: Match Highlights vs Wolves', category: 'academy-women', thumbnail: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600', duration: '6:22', premium: false },
+  { id: 1, title: 'HIGHLIGHTS: LBRYC 0-0 Bhamti Bandhar', category: 'highlights', thumbnail: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600', duration: '5:14', premium: true },
+  { id: 2, title: 'ABIRAJ: Post-Match Reaction vs Bhamti Bandhar', category: 'interviews', thumbnail: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600', duration: '3:42', premium: true },
+  { id: 3, title: 'TRAINING: Libhura Prepare for Milan Chowk', category: 'training', thumbnail: 'https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=600', duration: '4:07', premium: true },
+  { id: 4, title: 'WOMEN: Match Highlights vs We ARE Brothers', category: 'academy-women', thumbnail: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600', duration: '6:22', premium: false },
 ];
 
 const PlayIcon = () => (
@@ -18,7 +18,7 @@ const PlayIcon = () => (
 );
 
 const VideoCard = ({ video }) => (
-  <Link to="/claretsplus" className="group relative overflow-hidden block bg-dark-700 card-hover">
+  <Link to="/libhuraplus" className="group relative overflow-hidden block bg-dark-700 card-hover">
     <div className="relative aspect-video overflow-hidden">
       <img src={video.thumbnail} alt={video.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -28,7 +28,7 @@ const VideoCard = ({ video }) => (
       </div>
       {video.premium && (
         <div className="absolute top-3 right-3 bg-yellow-500 text-dark-900 text-[10px] font-bold px-2 py-0.5 uppercase tracking-widest">
-          Clarets+
+          Libhura+
         </div>
       )}
       <div className="absolute bottom-2 right-3 text-white/70 text-xs font-mono">{video.duration}</div>
@@ -48,9 +48,9 @@ const ClaretsSection = () => (
       <div className="flex items-end justify-between mb-8">
         <div>
           <p className="text-yellow-400 text-xs uppercase tracking-[0.3em] mb-2 font-semibold">Exclusive Content</p>
-          <h2 className="section-title">Clarets<span className="text-claret-400">+</span></h2>
+          <h2 className="section-title">Libhura<span className="text-claret-400">+</span></h2>
         </div>
-        <Link to="/claretsplus"
+        <Link to="/libhuraplus"
           className="hidden md:inline-flex items-center gap-2 text-xs text-white/40 hover:text-yellow-400 uppercase tracking-widest transition-colors">
           All Videos →
         </Link>
@@ -67,7 +67,7 @@ const ClaretsSection = () => (
             Unlock All Content
           </h3>
           <p className="text-white/60 text-sm">
-            Subscribe to Clarets+ for exclusive interviews, full-match replays, behind-the-scenes access and more.
+            Subscribe to Libhura+ for exclusive interviews, full-match replays, behind-the-scenes access and more.
           </p>
         </div>
         <Link to="/login" className="flex-shrink-0 bg-yellow-500 hover:bg-yellow-400 text-dark-900 font-bold px-8 py-3.5 uppercase tracking-widest text-sm transition-all duration-200">

@@ -20,7 +20,7 @@ const NewsSection = () => {
     <section className="max-w-7xl mx-auto px-4 py-16">
       <SectionHeader
         title="Latest News"
-        subtitle="Clarets Updates"
+        subtitle="Libhura Updates"
         action="All News"
         actionTo="/news"
       />

@@ -6,7 +6,7 @@ import { useAuth } from '../../context/AuthContext';
 const NAV_ITEMS = [
   { label: 'Latest',   path: '/news' },
   { label: 'Matches',  path: '/matches' },
-  { label: 'Libura+', path: '/liburaplus' },
+  { label: 'Libhura+', path: '/libhuraplus' },
   { label: 'Squad',    path: '/squad' },
   { label: 'Fans',     path: '/fans' },
 ];

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { TabFilter } from '../ui';
 
 const KITS = [
-  { type: 'home', label: 'Home Kit', color: '#6C1D45', accent: '#F5C842', description: 'Claret & Blue — Season 2024/25', image: 'https://images.unsplash.com/photo-1556906781-9a412961a28c?w=400' },
-  { type: 'away', label: 'Away Kit', color: '#1a1a2e', accent: '#ffffff', description: 'Dark Navy — Season 2024/25', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400' },
+  { type: 'home', label: 'Home Kit', color: '#1e3a6e', accent: '#111111', description: 'Black & Blue — Season 2024/25', image: 'https://images.unsplash.com/photo-1556906781-9a412961a28c?w=400' },
+  { type: 'away', label: 'Away Kit', color: '#e5e919', accent: '#20d61a', description: 'Yellow & Green — Season 2024/25', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400' },
   { type: 'third', label: 'Third Kit', color: '#0f4c75', accent: '#F5C842', description: 'Royal Blue — Season 2024/25', image: 'https://images.unsplash.com/photo-1562751362-404243064652?w=400' },
 ];
 
@@ -18,11 +18,11 @@ const KitShopSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text side */}
         <div>
-          <p className="text-claret-400 text-xs uppercase tracking-[0.3em] mb-3 font-semibold">Castore × Burnley FC</p>
+          <p className="text-claret-400 text-xs uppercase tracking-[0.3em] mb-3 font-semibold">Deepak4able × LBRYC</p>
           <h2 className="section-title mb-6">Season 24/25<br />Kit Collection</h2>
           <p className="text-white/50 text-sm leading-relaxed mb-8">
-            Wear your colours. Every stitch tells the story of 140 years of Burnley Football Club.
-            Available now in the official Burnley FC store.
+            Wear your colours. Every stitch tells the story of 20 years of Likhu Bhujee Ramechhap Youth Club.
+            Available now in the official LBRYC store.
           </p>
 
           <TabFilter tabs={KIT_TABS} active={active} onChange={setActive} className="mb-8" />
@@ -33,11 +33,11 @@ const KitShopSection = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <a href="https://shop.burnleyfc.com" target="_blank" rel="noreferrer"
+            <a href="https://shop.lbryc.com" target="_blank" rel="noreferrer"
               className="btn-claret">
               Buy Now
             </a>
-            <a href="https://shop.burnleyfc.com" target="_blank" rel="noreferrer"
+            <a href="https://shop.lbryc.com" target="_blank" rel="noreferrer"
               className="btn-outline">
               Personalise
             </a>

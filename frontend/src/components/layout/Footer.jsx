@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const SOCIAL = [
-  { name: 'Facebook', href: 'https://www.facebook.com/burnleyofficial', icon: 'f' },
-  { name: 'Twitter/X', href: 'https://twitter.com/BurnleyOfficial', icon: '𝕏' },
-  { name: 'Instagram', href: 'https://www.instagram.com/burnleyofficial', icon: '◉' },
-  { name: 'YouTube', href: 'https://www.youtube.com/@burnleyofficial', icon: '▶' },
-  { name: 'TikTok', href: 'https://www.tiktok.com/@burnleyofficial', icon: '♪' },
+  { name: 'Facebook', href: 'https://www.facebook.com', icon: 'f' },
+  { name: 'Twitter/X', href: 'https://twitter.com', icon: '𝕏' },
+  { name: 'Instagram', href: 'https://www.instagram.com', icon: '◉' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@Deepaka4able', icon: '▶' },
+  { name: 'TikTok', href: 'https://www.tiktok.com', icon: '♪' },
 ];
 
 const FOOTER_COLS = [
@@ -39,7 +39,7 @@ const FOOTER_COLS = [
   {
     title: 'Club',
     links: [
-      { label: 'Clarets+', to: '/claretsplus' },
+      { label: 'Libhura+', to: '/libhuraplus' },
       { label: 'Partners', to: '/partners' },
       { label: 'Fan Hub', to: '/fans' },
       { label: 'Contact Us', to: '/contact' },
@@ -55,11 +55,11 @@ const Footer = () => (
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 bg-claret-gradient rounded-full flex items-center justify-center">
-              <span className="font-display text-white text-xl">BFC</span>
+              <span className="font-display text-white text-xl">LBRYC</span>
             </div>
           </div>
           <p className="text-white/40 text-sm leading-relaxed mb-6">
-            The official home of Burnley Football Club. Est. 1882.
+            The official home of Likhu Bhujee Ramechhap Youth Club. Est. 2063 BS.
           </p>
           <div className="flex gap-3">
             {SOCIAL.map((s) => (
@@ -93,7 +93,7 @@ const Footer = () => (
       {/* Bottom bar */}
       <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-white/25 text-xs uppercase tracking-widest">
-          © {new Date().getFullYear()} Burnley Football Club Ltd. All rights reserved.
+          © {new Date().getFullYear()} Likhu Bhujee Ramechhap Youth Club Ltd. All rights reserved.
         </p>
         <div className="flex gap-6">
           {['Terms of Use', 'Cookie Policy', 'Privacy Policy', 'Contact'].map((item) => (

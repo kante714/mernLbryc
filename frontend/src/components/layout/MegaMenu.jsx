@@ -22,13 +22,22 @@ const menuData = {
       { label: 'League Table', to: '/table' },
     ],
   },
-  'Clarets+': {
+  // 'Clarets+': {
+  //   links: [
+  //     { label: 'All Videos', to: '/claretsplus' },
+  //     { label: 'Highlights', to: '/claretsplus?category=highlights' },
+  //     { label: 'Interviews', to: '/claretsplus?category=interviews' },
+  //     { label: 'Training', to: '/claretsplus?category=training' },
+  //     { label: 'Academy & Women', to: '/claretsplus?category=academy-women' },
+  //   ],
+  // },
+  'Libhura+': {
     links: [
-      { label: 'All Videos', to: '/claretsplus' },
-      { label: 'Highlights', to: '/claretsplus?category=highlights' },
-      { label: 'Interviews', to: '/claretsplus?category=interviews' },
-      { label: 'Training', to: '/claretsplus?category=training' },
-      { label: 'Academy & Women', to: '/claretsplus?category=academy-women' },
+      { label: 'All Videos', to: '/libhuraplus' },
+      { label: 'Highlights', to: '/libhuraplus?category=highlights' },
+      { label: 'Interviews', to: '/libhuraplus?category=interviews' },
+      { label: 'Training', to: '/libhuraplus?category=training' },
+      { label: 'Academy & Women', to: '/libhuraplus?category=academy-women' },
     ],
   },
   Squad: {
@@ -43,7 +52,7 @@ const menuData = {
   Fans: {
     links: [
       { label: 'Fan Hub', to: '/fans' },
-      { label: 'Libura+', to: '/liburaplus' },
+      { label: 'Libhura+', to: '/libhuraplus' },
       { label: 'Fan Advisory Board', to: '/fans/advisory-board' },
       { label: 'Travel', to: '/fans/travel' },
       { label: 'Disabled Supporter Info', to: '/fans/accessibility' },

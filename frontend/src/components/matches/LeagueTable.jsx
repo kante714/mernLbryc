@@ -11,7 +11,7 @@ const FormDot = ({ r }) => (
   </span>
 );
 
-const LeagueTable = ({ highlightTeam = 'Burnley' }) => {
+const LeagueTable = ({ highlightTeam = 'Likhu Bhujee RYC' }) => {
   const [standings, setStandings] = useState([]);
   const [loading,   setLoading]   = useState(true);
   const [error,     setError]     = useState(null);

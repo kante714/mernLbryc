@@ -5,10 +5,10 @@ const AppDownloadCTA = () => (
         <div className="text-center md:text-left">
           <p className="text-claret-400 text-xs uppercase tracking-[0.3em] mb-3 font-semibold">Official App</p>
           <h2 className="font-display text-4xl md:text-5xl text-white uppercase tracking-wider mb-4">
-            Burnley FC<br /><span className="text-yellow-400">In Your Pocket</span>
+            LBRYC<br /><span className="text-yellow-400">In Your Pocket</span>
           </h2>
           <p className="text-white/50 text-sm leading-relaxed max-w-md">
-            Live scores, news, match alerts, and Clarets+ content — all in the official Burnley FC app.
+            Live scores, news, match alerts, and Libhura+ content — all in the official LBRYC app.
           </p>
         </div>
 

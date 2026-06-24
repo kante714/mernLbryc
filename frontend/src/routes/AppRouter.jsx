@@ -9,7 +9,8 @@ import ArticlePage       from '../pages/news/ArticlePage';
 import MatchesPage       from '../pages/matches/MatchesPage';
 import SquadPage         from '../pages/squad/SquadPage';
 import PlayerProfilePage from '../pages/squad/PlayerProfilePage';
-import ClaretsPlusPage   from '../pages/claretsplus/ClaretsPlusPage';
+// import ClaretsPlusPage   from '../pages/claretsplus/ClaretsPlusPage';
+import LibhuraPlusPage   from '../pages/libhuraplus/LibhuraPlusPage';
 import LoginPage         from '../pages/auth/LoginPage';
 import AdminDashboard    from '../pages/admin/AdminDashboard';
 import AdminNews         from '../pages/admin/AdminNews';
@@ -37,7 +38,8 @@ const AppRouter = () => (
         <Route path="/table"        element={<MatchesPage />} />
         <Route path="/squad"        element={<SquadPage />} />
         <Route path="/player/:slug" element={<PlayerProfilePage />} />
-        <Route path="/claretsplus"  element={<ClaretsPlusPage />} />
+        {/* <Route path="/claretsplus"  element={<ClaretsPlusPage />} /> */}
+        <Route path="/libhuraplus"  element={<LibhuraPlusPage />} />
         <Route path="/login"        element={<LoginPage />} />
 
         {/* Admin — protected */}

@@ -59,7 +59,7 @@ const AdminDashboard = () => {
         <StatCard label="Articles" value={loading ? '…' : stats.articles} to="/admin/news"  color="claret" />
         <StatCard label="Matches"  value={loading ? '…' : stats.matches}  to="/matches"     color="gold"   />
         <StatCard label="Players"  value={loading ? '…' : stats.players}  to="/squad"       color="green"  />
-        <StatCard label="Videos"   value={loading ? '…' : stats.videos}   to="/claretsplus" color="claret" />
+        <StatCard label="Videos"   value={loading ? '…' : stats.videos}   to="/libhuraplus" color="claret" />
       </div>
 
       {/* Quick links */}
