@@ -17,7 +17,7 @@ const TopBar = () => (
       </div>
       <div className="flex items-center gap-2">
         <span className="text-xs text-white/30 uppercase tracking-widest">Kit Partner</span>
-        <span className="text-xs font-bold text-white/60 tracking-widest uppercase">Castore</span>
+        <span className="text-xs font-bold text-white/60 tracking-widest uppercase">Deepak4able</span>
       </div>
     </div>
   </div>
