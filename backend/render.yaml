@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: burnley-fc-api
+    name: lbryc
     env: node
     plan: free
     buildCommand: npm install
@@ -9,7 +9,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000
+        value: 5000
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
