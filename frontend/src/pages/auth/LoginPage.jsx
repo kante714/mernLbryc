@@ -33,13 +33,13 @@ const LoginPage = () => {
         {/* Logo */}
         <div className="text-center mb-10">
           <div className="w-16 h-16 bg-claret-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="font-display text-white text-2xl">BFC</span>
+            <span className="font-display text-white text-2xl">LBRYC</span>
           </div>
           <h1 className="font-display text-3xl text-white uppercase tracking-widest">
             {mode === 'login' ? 'Sign In' : 'Create Account'}
           </h1>
           <p className="text-white/40 text-xs uppercase tracking-widest mt-2">
-            {mode === 'login' ? 'Access your Clarets+ account' : 'Join the Clarets+ community'}
+            {mode === 'login' ? 'Access your Libhura+ account' : 'Join the Libhura+ community'}
           </p>
         </div>
 
