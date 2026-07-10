@@ -7,6 +7,7 @@ const StatCard = ({ label, value, to, color = 'claret' }) => {
     claret: 'border-claret-800',
     gold:   'border-yellow-500',
     green:  'border-green-600',
+    blue:   'border-blue-500',
   };
   return (
     <Link to={to}
@@ -30,20 +31,24 @@ const AdminDashboard = () => {
       api.get('/matches', { params: { limit: 1 } }),
       api.get('/players'),
       api.get('/videos'),
-    ]).then(([news, matches, players, videos]) => {
+      api.get('/standings'),
+    ]).then(([news, matches, players, videos, standings]) => {
       setStats({
-        articles: news.status     === 'fulfilled' ? news.value.data.total                   : '?',
-        matches:  matches.status  === 'fulfilled' ? matches.value.data.matches?.length       : '?',
-        players:  players.status  === 'fulfilled' ? players.value.data.players?.length       : '?',
-        videos:   videos.status   === 'fulfilled' ? videos.value.data.videos?.length         : '?',
+        articles:  news.status      === 'fulfilled' ? news.value.data.total                   : '?',
+        matches:   matches.status   === 'fulfilled' ? matches.value.data.matches?.length       : '?',
+        players:   players.status   === 'fulfilled' ? players.value.data.players?.length       : '?',
+        videos:    videos.status    === 'fulfilled' ? videos.value.data.total                  : '?',
+        standings: standings.status === 'fulfilled' ? standings.value.data.standings?.length   : '?',
       });
     }).finally(() => setLoading(false));
   }, []);
 
   const quickLinks = [
     { icon: '📝', label: 'Create Article', desc: 'Publish a new news article',   to: '/admin/news' },
-    { icon: '⚽', label: 'View Matches',   desc: 'See all fixtures & results',    to: '/matches' },
-    { icon: '👤', label: 'View Squad',     desc: 'Browse all player profiles',    to: '/squad' },
+    { icon: '🎬', label: 'Manage Videos',  desc: 'Upload highlights & interviews', to: '/admin/videos' },
+    { icon: '⚽', label: 'Manage Matches', desc: 'Add fixtures & results',        to: '/admin/matches' },
+    { icon: '👤', label: 'Manage Squad',   desc: 'Add & edit player profiles',    to: '/admin/players' },
+    { icon: '📊', label: 'Manage Standings', desc: 'Update the league table',     to: '/admin/standings' },
   ];
 
   return (
@@ -55,15 +60,16 @@ const AdminDashboard = () => {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-        <StatCard label="Articles" value={loading ? '…' : stats.articles} to="/admin/news"  color="claret" />
-        <StatCard label="Matches"  value={loading ? '…' : stats.matches}  to="/matches"     color="gold"   />
-        <StatCard label="Players"  value={loading ? '…' : stats.players}  to="/squad"       color="green"  />
-        <StatCard label="Videos"   value={loading ? '…' : stats.videos}   to="/libhuraplus" color="claret" />
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+        <StatCard label="Articles"  value={loading ? '…' : stats.articles}  to="/admin/news"     color="claret" />
+        <StatCard label="Matches"   value={loading ? '…' : stats.matches}   to="/admin/matches"  color="gold"   />
+        <StatCard label="Players"   value={loading ? '…' : stats.players}   to="/admin/players"  color="green"  />
+        <StatCard label="Videos"    value={loading ? '…' : stats.videos}    to="/admin/videos"   color="claret" />
+        <StatCard label="Standings" value={loading ? '…' : stats.standings} to="/admin/standings" color="blue"  />
       </div>
 
       {/* Quick links */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {quickLinks.map((item) => (
           <Link key={item.to} to={item.to}
             className="bg-dark-700 hover:bg-dark-600 border border-white/5 hover:border-claret-800/50 p-6 transition-all duration-200 group">

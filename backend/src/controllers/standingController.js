@@ -1,16 +1,27 @@
 const asyncHandler = require('../utils/asyncHandler');
-const Standing = require('../models/Standing');
+const standingService = require('../services/standingService');
+const { validateAssetSize } = require('../middleware/uploadMiddleware');
 
 const getStandings = asyncHandler(async (req, res) => {
-  const { season = '2024-25' } = req.query;
-  const standings = await Standing.find({ season }).sort({ position: 1 });
+  const standings = await standingService.getStandings(req.query);
   res.json({ success: true, standings });
 });
 
+const createStanding = asyncHandler(async (req, res) => {
+  validateAssetSize(req.file, 'image');
+  const standing = await standingService.createStanding(req.body, req.file);
+  res.status(201).json({ success: true, standing });
+});
+
 const updateStanding = asyncHandler(async (req, res) => {
-  const standing = await Standing.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  if (!standing) { res.status(404); throw new Error('Standing not found'); }
+  validateAssetSize(req.file, 'image');
+  const standing = await standingService.updateStanding(req.params.id, req.body, req.file);
   res.json({ success: true, standing });
 });
 
-module.exports = { getStandings, updateStanding };
+const deleteStanding = asyncHandler(async (req, res) => {
+  await standingService.deleteStanding(req.params.id);
+  res.json({ success: true, message: 'Standing deleted' });
+});
+
+module.exports = { getStandings, createStanding, updateStanding, deleteStanding };

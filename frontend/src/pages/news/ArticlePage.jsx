@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import { fetchArticle, fetchArticles } from '../../api/newsApi';
 import { formatDate } from '../../utils/formatDate';
 import { Badge, Spinner, ErrorMessage } from '../../components/ui';
@@ -68,7 +69,9 @@ const ArticlePage = () => {
           <div
             className="prose prose-invert prose-sm max-w-none text-white/70 leading-relaxed
                        [&>p]:mb-5 [&>h2]:font-display [&>h2]:text-white [&>h2]:uppercase [&>h2]:tracking-wider [&>h2]:text-2xl [&>h2]:mt-10 [&>h2]:mb-4"
-            dangerouslySetInnerHTML={{ __html: article.body || '<p>Full article content coming soon.</p>' }}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(article.body || '<p>Full article content coming soon.</p>'),
+            }}
           />
         </div>
 

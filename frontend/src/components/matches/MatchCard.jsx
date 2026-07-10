@@ -2,14 +2,18 @@ import { Link } from 'react-router-dom';
 import { formatMatchDate, formatMatchTime } from '../../utils/formatDate';
 import { Badge } from '../ui';
 
-const Crest = ({ name }) => (
+const Crest = ({ name, logoUrl }) => (
   <div className="flex flex-col items-center gap-2 w-28 md:w-36 flex-shrink-0">
-    <div className="w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center">
-      <span className="text-white/60 font-bold text-xs tracking-wider">
-        {name.replace(/\s+(FC|United|City|Town|County|Rovers|Wanderers|Athletic|Wednesday|U21|U18|Women).*$/i, '')
-             .slice(0, 3)
-             .toUpperCase()}
-      </span>
+    <div className="w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center overflow-hidden">
+      {logoUrl ? (
+        <img src={logoUrl} alt="" className="w-full h-full object-contain p-1.5" />
+      ) : (
+        <span className="text-white/60 font-bold text-xs tracking-wider">
+          {name.replace(/\s+(FC|United|City|Town|County|Rovers|Wanderers|Athletic|Wednesday|U21|U18|Women).*$/i, '')
+               .slice(0, 3)
+               .toUpperCase()}
+        </span>
+      )}
     </div>
     <span className="text-white font-semibold text-xs uppercase tracking-wide text-center leading-tight line-clamp-2">
       {name}
@@ -38,7 +42,7 @@ const MatchCard = ({ match }) => {
 
       {/* Match body */}
       <div className="px-5 py-6 flex items-center justify-between gap-4">
-        <Crest name={match.homeTeam} />
+        <Crest name={match.homeTeam} logoUrl={match.homeTeamLogo} />
 
         {/* Score or time */}
         <div className="flex flex-col items-center gap-1.5 flex-1 min-w-0">
@@ -74,7 +78,7 @@ const MatchCard = ({ match }) => {
           )}
         </div>
 
-        <Crest name={match.awayTeam} />
+        <Crest name={match.awayTeam} logoUrl={match.awayTeamLogo} />
       </div>
 
       {/* Action bar */}

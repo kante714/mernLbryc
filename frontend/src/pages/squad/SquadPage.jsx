@@ -56,7 +56,7 @@ const SquadPage = () => {
     <main className="max-w-7xl mx-auto px-4 py-12">
       {/* Header */}
       <div className="border-l-4 border-claret-800 pl-6 mb-10">
-        <p className="text-claret-400 text-xs uppercase tracking-[0.3em] mb-2 font-semibold">Burnley FC</p>
+        <p className="text-claret-400 text-xs uppercase tracking-[0.3em] mb-2 font-semibold">LBRYC</p>
         <h1 className="section-title">Squad</h1>
       </div>
 

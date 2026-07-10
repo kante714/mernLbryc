@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Starting Burnley FC MERN App..."
+echo "Starting LBRYC MERN App..."
 echo ""
 echo "Make sure MongoDB is running first!"
 echo ""

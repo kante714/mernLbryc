@@ -58,10 +58,15 @@ const LeagueTable = ({ highlightTeam = 'Likhu Bhujee RYC' }) => {
 
                 {/* Team */}
                 <td className="py-3 px-2">
-                  <span className={`font-semibold text-xs uppercase tracking-wide
-                    ${hi ? 'text-yellow-400' : 'text-white'}`}>
-                    {row.teamName}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {row.logoUrl && (
+                      <img src={row.logoUrl} alt="" className="w-5 h-5 object-contain flex-shrink-0" />
+                    )}
+                    <span className={`font-semibold text-xs uppercase tracking-wide
+                      ${hi ? 'text-yellow-400' : 'text-white'}`}>
+                      {row.teamName}
+                    </span>
+                  </div>
                 </td>
 
                 {/* P W D L */}

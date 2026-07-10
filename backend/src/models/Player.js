@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mediaAssetSchema = require('../utils/mediaAssetSchema');
 
 const playerSchema = new mongoose.Schema(
   {
@@ -17,7 +18,8 @@ const playerSchema = new mongoose.Schema(
     shirtNumber: { type: Number, default: null },
     nationality: { type: String, default: '' },
     nationalityFlag: { type: String, default: '' },
-    photoUrl: { type: String, default: '' },
+    // Full Cloudinary metadata (needed to delete the asset later).
+    photoAsset: { type: mediaAssetSchema, default: () => ({}) },
     onLoan: { type: Boolean, default: false },
     stats: {
       appearances: { type: Number, default: 0 },
@@ -31,7 +33,20 @@ const playerSchema = new mongoose.Schema(
     dateOfBirth: { type: Date },
     height: { type: String, default: '' },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
 );
+
+// Backward-compatible virtual: existing frontend code reads player.photoUrl
+// as a plain string URL. Keep serving that shape while the real Cloudinary
+// metadata (public_id, etc.) lives in photoAsset above.
+playerSchema.virtual('photoUrl').get(function () {
+  return this.photoAsset?.secureUrl || '';
+});
+
+playerSchema.index({ squad: 1, position: 1 });
 
 module.exports = mongoose.model('Player', playerSchema);

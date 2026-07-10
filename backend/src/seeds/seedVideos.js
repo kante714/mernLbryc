@@ -1,12 +1,15 @@
 const now = new Date();
 const daysAgo = (d) => new Date(now.getTime() - d * 24 * 60 * 60 * 1000);
 
+// Seed thumbnails point at Unsplash directly (not Cloudinary) — that's fine,
+// thumbnailAsset.publicId stays empty so nothing will ever attempt to delete
+// them from Cloudinary. Once an admin re-uploads a real thumbnail through the
+// admin UI, publicId gets populated and lifecycle management kicks in.
 const videos = [
   {
     title: 'HIGHLIGHTS: LIKHU BHUJEE RYC 0-0 BIGU',
     category: 'highlights',
-    thumbnail: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600', resourceType: 'image' },
     duration: '5:14',
     premium: true,
     publishedAt: daysAgo(1),
@@ -15,18 +18,16 @@ const videos = [
   {
     title: 'HIGHLIGHTS: UNITED RASNALU 1-2 LIKHU BHUJEE RYC',
     category: 'highlights',
-    thumbnail: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600', resourceType: 'image' },
     duration: '6:32',
-    premium: true,  
+    premium: true,
     publishedAt: daysAgo(4),
     description: 'Extended highlights from United Rasnalu\'s defeat at Amrit Ghamchaya.',
   },
   {
     title: 'ABIRAJ: Post-Match Reaction vs Bigu',
     category: 'interviews',
-    thumbnail: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600', resourceType: 'image' },
     duration: '3:42',
     premium: true,
     publishedAt: daysAgo(1),
@@ -35,8 +36,7 @@ const videos = [
   {
     title: 'RABIN: "We Have The Quality To Win"',
     category: 'interviews',
-    thumbnail: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=600', resourceType: 'image' },
     duration: '2:58',
     premium: true,
     publishedAt: daysAgo(2),
@@ -45,8 +45,7 @@ const videos = [
   {
     title: 'TRAINING: Libhuras Prepare for Norwich',
     category: 'training',
-    thumbnail: 'https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=600', resourceType: 'image' },
     duration: '4:07',
     premium: true,
     publishedAt: daysAgo(3),
@@ -55,8 +54,7 @@ const videos = [
   {
     title: 'TRAINING: Set-Piece Work Ahead of We Are Brothers',
     category: 'training',
-    thumbnail: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600', resourceType: 'image' },
     duration: '3:21',
     premium: false,
     publishedAt: daysAgo(4),
@@ -65,8 +63,7 @@ const videos = [
   {
     title: 'WOMEN: Match Highlights vs We Are Brothers Women',
     category: 'academy-women',
-    thumbnail: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600', resourceType: 'image' },
     duration: '6:22',
     premium: false,
     publishedAt: daysAgo(2),
@@ -75,8 +72,7 @@ const videos = [
   {
     title: 'ACADEMY: Under-18 Highlights vs Bhamti Bhandar',
     category: 'academy-women',
-    thumbnail: 'https://images.unsplash.com/photo-1547940575-1b2b5e34f33f?w=600',
-    videoUrl: '',
+    thumbnailAsset: { secureUrl: 'https://images.unsplash.com/photo-1547940575-1b2b5e34f33f?w=600', resourceType: 'image' },
     duration: '4:55',
     premium: false,
     publishedAt: daysAgo(5),

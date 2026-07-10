@@ -14,6 +14,10 @@ import LibhuraPlusPage   from '../pages/libhuraplus/LibhuraPlusPage';
 import LoginPage         from '../pages/auth/LoginPage';
 import AdminDashboard    from '../pages/admin/AdminDashboard';
 import AdminNews         from '../pages/admin/AdminNews';
+import AdminVideos       from '../pages/admin/AdminVideos';
+import AdminPlayers      from '../pages/admin/AdminPlayers';
+import AdminStandings    from '../pages/admin/AdminStandings';
+import AdminMatches      from '../pages/admin/AdminMatches';
 import { ProtectedRoute } from './ProtectedRoute';
 
 const NotFound = () => (
@@ -45,6 +49,10 @@ const AppRouter = () => (
         {/* Admin — protected */}
         <Route path="/admin"      element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
         <Route path="/admin/news" element={<ProtectedRoute adminOnly><AdminNews /></ProtectedRoute>} />
+        <Route path="/admin/videos" element={<ProtectedRoute adminOnly><AdminVideos /></ProtectedRoute>} />
+        <Route path="/admin/players" element={<ProtectedRoute adminOnly><AdminPlayers /></ProtectedRoute>} />
+        <Route path="/admin/standings" element={<ProtectedRoute adminOnly><AdminStandings /></ProtectedRoute>} />
+        <Route path="/admin/matches" element={<ProtectedRoute adminOnly><AdminMatches /></ProtectedRoute>} />
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />

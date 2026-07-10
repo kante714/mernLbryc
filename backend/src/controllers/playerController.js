@@ -1,5 +1,6 @@
 const asyncHandler = require('../utils/asyncHandler');
 const playerService = require('../services/playerService');
+const { validateAssetSize } = require('../middleware/uploadMiddleware');
 
 const getPlayers = asyncHandler(async (req, res) => {
   const players = await playerService.getPlayers(req.query);
@@ -12,12 +13,14 @@ const getPlayer = asyncHandler(async (req, res) => {
 });
 
 const createPlayer = asyncHandler(async (req, res) => {
-  const player = await playerService.createPlayer(req.body);
+  validateAssetSize(req.file, 'image');
+  const player = await playerService.createPlayer(req.body, req.file);
   res.status(201).json({ success: true, player });
 });
 
 const updatePlayer = asyncHandler(async (req, res) => {
-  const player = await playerService.updatePlayer(req.params.id, req.body);
+  validateAssetSize(req.file, 'image');
+  const player = await playerService.updatePlayer(req.params.id, req.body, req.file);
   res.json({ success: true, player });
 });
 

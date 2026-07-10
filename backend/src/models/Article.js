@@ -14,7 +14,7 @@ const articleSchema = new mongoose.Schema(
     body: { type: String },
     imageUrl: { type: String, default: '' },
     readTime: { type: Number, default: 2 },
-    author: { type: String, default: 'Burnley FC' },
+    author: { type: String, default: 'LBRYC' },
     team: {
       type: String,
       enum: ['men', 'women', 'under-21', 'under-18', 'general'],

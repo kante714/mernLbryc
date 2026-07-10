@@ -1,5 +1,6 @@
 const asyncHandler = require('../utils/asyncHandler');
 const matchService = require('../services/matchService');
+const { validateAssetSize } = require('../middleware/uploadMiddleware');
 
 const getMatches = asyncHandler(async (req, res) => {
   const matches = await matchService.getMatches(req.query);
@@ -16,13 +17,21 @@ const getMatch = asyncHandler(async (req, res) => {
   res.json({ success: true, match });
 });
 
+const validateMatchLogos = (files = {}) => {
+  validateAssetSize(files.homeTeamLogo?.[0], 'image');
+  validateAssetSize(files.awayTeamLogo?.[0], 'image');
+  validateAssetSize(files.competitionLogo?.[0], 'image');
+};
+
 const createMatch = asyncHandler(async (req, res) => {
-  const match = await matchService.createMatch(req.body);
+  validateMatchLogos(req.files);
+  const match = await matchService.createMatch(req.body, req.files);
   res.status(201).json({ success: true, match });
 });
 
 const updateMatch = asyncHandler(async (req, res) => {
-  const match = await matchService.updateMatch(req.params.id, req.body);
+  validateMatchLogos(req.files);
+  const match = await matchService.updateMatch(req.params.id, req.body, req.files);
   res.json({ success: true, match });
 });
 

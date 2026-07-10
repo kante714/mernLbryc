@@ -1,8 +1,15 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
 const { errorHandler } = require('./middleware/errorMiddleware');
+const { generalLimiter, authLimiter } = require('./middleware/rateLimitMiddleware');
 
 const app = express();
+
+// Security headers (CSP left at default-safe; this is a JSON API, not a
+// server-rendered site, so the default policy is appropriate here)
+app.use(helmet());
 
 // CORS — allow all Vercel deployments + localhost in dev
 const allowedOrigins = [
@@ -37,8 +44,16 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
 
+// Strips any `$`-prefixed keys or dots from req.body/req.query/req.params —
+// closes off Mongo operator injection (e.g. ?category[$ne]=null) across
+// every list endpoint. Must run after the body parsers above.
+app.use(mongoSanitize());
+
+// Baseline abuse protection on the whole API, strict throttle on auth specifically
+app.use('/api', generalLimiter);
+
 // Routes
-app.use('/api/auth',      require('./routes/authRoutes'));
+app.use('/api/auth',      authLimiter, require('./routes/authRoutes'));
 app.use('/api/news',      require('./routes/newsRoutes'));
 app.use('/api/matches',   require('./routes/matchRoutes'));
 app.use('/api/players',   require('./routes/playerRoutes'));
