@@ -14,6 +14,7 @@ const NAV_ITEMS = [
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const { user, logout, isAdmin } = useAuth();
   const navigate    = useNavigate();
   const navRef      = useRef(null);
@@ -44,8 +45,17 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" onClick={() => setActiveMenu(null)}
             className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 bg-claret-gradient rounded-full flex items-center justify-center">
-              <span className="font-display text-white text-lg leading-none">lbryc</span>
+            <div className="w-10 h-10 bg-claret-gradient rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+              {logoError ? (
+                <span className="font-display text-white text-lg leading-none">lbryc</span>
+              ) : (
+                <img
+                  src="/logo.jpg"
+                  alt="Likhu Bhujee RYC"
+                  className="w-full h-full object-contain"
+                  onError={() => setLogoError(true)}
+                />
+              )}
             </div>
             <span className="font-display text-white text-2xl tracking-widest hidden sm:block">
               likhu bhujee
@@ -133,12 +143,21 @@ const Navbar = () => {
                        uppercase tracking-widest text-sm font-semibold transition-colors">
             Commercial
           </Link>
-          <div className="border-t border-white/10 pt-4 mt-2">
+          <div className="border-t border-white/10 pt-4 mt-2 space-y-3">
             {user ? (
-              <button onClick={() => { handleLogout(); setMobileOpen(false); }}
-                className="w-full btn-claret text-center">
-                Sign Out
-              </button>
+              <>
+                {isAdmin && (
+                  <Link to="/admin" onClick={() => setMobileOpen(false)}
+                    className="block py-3 px-4 text-center text-yellow-400 hover:text-yellow-300
+                               uppercase tracking-widest text-sm font-semibold transition-colors border border-yellow-400/30">
+                    Admin
+                  </Link>
+                )}
+                <button onClick={() => { handleLogout(); setMobileOpen(false); }}
+                  className="w-full btn-claret text-center">
+                  Sign Out
+                </button>
+              </>
             ) : (
               <Link to="/login" onClick={() => setMobileOpen(false)}
                 className="btn-claret w-full text-center block">
