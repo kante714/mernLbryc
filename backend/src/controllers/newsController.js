@@ -1,5 +1,6 @@
 const asyncHandler = require('../utils/asyncHandler');
 const newsService = require('../services/newsService');
+const { validateAssetSize } = require('../middleware/uploadMiddleware');
 
 const getArticles = asyncHandler(async (req, res) => {
   const result = await newsService.getArticles(req.query);
@@ -17,12 +18,16 @@ const getArticle = asyncHandler(async (req, res) => {
 });
 
 const createArticle = asyncHandler(async (req, res) => {
-  const article = await newsService.createArticle(req.body);
+  const imageFile = req.files?.image?.[0];
+  validateAssetSize(imageFile, 'image');
+  const article = await newsService.createArticle(req.body, imageFile);
   res.status(201).json({ success: true, article });
 });
 
 const updateArticle = asyncHandler(async (req, res) => {
-  const article = await newsService.updateArticle(req.params.id, req.body);
+  const imageFile = req.files?.image?.[0];
+  validateAssetSize(imageFile, 'image');
+  const article = await newsService.updateArticle(req.params.id, req.body, imageFile);
   res.json({ success: true, article });
 });
 

@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { fetchArticles, deleteArticle, createArticle } from '../../api/newsApi';
 import { Spinner, ErrorMessage, Badge } from '../../components/ui';
 import { formatDate } from '../../utils/formatDate';
+import MediaFileInput from '../../components/admin/MediaFileInput';
 
 const CATEGORIES = ['club-news','match-previews','match-reports','ticket-news','training','community','commercial','boardroom'];
 const TEAMS = ['men','women','under-21','under-18','general'];
 
-const EMPTY_FORM = { title: '', slug: '', category: 'club-news', summary: '', body: '', imageUrl: '', readTime: 2, team: 'general', featured: false };
+const EMPTY_FORM = { title: '', slug: '', category: 'club-news', summary: '', body: '', readTime: 2, team: 'general', featured: false };
 
 const slugify = (str) => str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
 
@@ -17,8 +18,10 @@ const AdminNews = () => {
   const [error, setError] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState(EMPTY_FORM);
+  const [imageFile, setImageFile] = useState(null);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState('');
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const load = () => {
     setLoading(true);
@@ -32,19 +35,38 @@ const AdminNews = () => {
 
   const handleTitleChange = (title) => setForm((f) => ({ ...f, title, slug: slugify(title) }));
 
+  const openCreateForm = () => {
+    setForm(EMPTY_FORM);
+    setImageFile(null);
+    setFormError('');
+    setShowForm(true);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSaving(true);
     setFormError('');
+    setUploadProgress(0);
+
+    const formData = new FormData();
+    Object.entries(form).forEach(([key, value]) => formData.append(key, value));
+    if (imageFile) formData.append('image', imageFile);
+
+    const onUploadProgress = (evt) => {
+      if (evt.total) setUploadProgress(Math.round((evt.loaded / evt.total) * 100));
+    };
+
     try {
-      await createArticle(form);
+      await createArticle(formData, onUploadProgress);
       setShowForm(false);
       setForm(EMPTY_FORM);
+      setImageFile(null);
       load();
     } catch (err) {
       setFormError(err.response?.data?.message || 'Failed to create article.');
     } finally {
       setSaving(false);
+      setUploadProgress(0);
     }
   };
 
@@ -63,7 +85,7 @@ const AdminNews = () => {
           <p className="text-yellow-400 text-xs uppercase tracking-[0.3em] mb-2">Admin</p>
           <h1 className="section-title">News Manager</h1>
         </div>
-        <button onClick={() => setShowForm(!showForm)} className="btn-claret">
+        <button onClick={showForm ? () => setShowForm(false) : openCreateForm} className="btn-claret">
           {showForm ? 'Cancel' : '+ New Article'}
         </button>
       </div>
@@ -98,9 +120,11 @@ const AdminNews = () => {
               </select>
             </div>
             <div className="md:col-span-2">
-              <label className="block text-xs text-white/40 uppercase tracking-widest mb-2">Image URL</label>
-              <input value={form.imageUrl} onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
-                className="w-full bg-dark-800 border border-white/10 focus:border-claret-700 text-white px-4 py-3 text-sm outline-none" />
+              <MediaFileInput
+                label="Article Image"
+                kind="image"
+                onChange={setImageFile}
+              />
             </div>
             <div className="md:col-span-2">
               <label className="block text-xs text-white/40 uppercase tracking-widest mb-2">Summary</label>
@@ -118,9 +142,15 @@ const AdminNews = () => {
               <label htmlFor="featured" className="text-white/60 text-sm uppercase tracking-widest">Featured Article</label>
             </div>
           </div>
+          {saving && uploadProgress > 0 && (
+            <div className="w-full bg-dark-800 h-1.5">
+              <div className="bg-yellow-500 h-1.5 transition-all duration-200" style={{ width: `${uploadProgress}%` }} />
+            </div>
+          )}
+
           {formError && <p className="text-red-400 text-xs uppercase tracking-widest">{formError}</p>}
           <button type="submit" disabled={saving} className="btn-claret">
-            {saving ? 'Publishing...' : 'Publish Article'}
+            {saving ? `Publishing... ${uploadProgress}%` : 'Publish Article'}
           </button>
         </form>
       )}
