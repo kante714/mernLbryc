@@ -1,5 +1,5 @@
 const standings = [
-  { season: "2024-25", teamName: "Likhu Bhujee RYC", teamCode: "LBC", position: 1, played: 46, won: 28, drawn: 10, lost: 8, goalsFor: 82, goalsAgainst: 45, goalDifference: 37, points: 94, form: "WWDWW" },
+  { season: "2024-25", teamName: "LikhuBhujee Ramechhap", teamCode: "LBC", position: 1, played: 46, won: 28, drawn: 10, lost: 8, goalsFor: 82, goalsAgainst: 45, goalDifference: 37, points: 94, form: "WWDWW" },
   { season: "2024-25", teamName: "Bhamti Bhandar", teamCode: "BBC", position: 2, played: 46, won: 27, drawn: 9, lost: 10, goalsFor: 79, goalsAgainst: 42, goalDifference: 37, points: 90, form: "WWWDW" },
   { season: "2024-25", teamName: "Milan Chowk", teamCode: "MCC", position: 3, played: 46, won: 24, drawn: 11, lost: 11, goalsFor: 72, goalsAgainst: 50, goalDifference: 22, points: 83, form: "WDDWL" },
   { season: "2024-25", teamName: "Team Jiri", teamCode: "TEJ", position: 4, played: 46, won: 22, drawn: 12, lost: 12, goalsFor: 68, goalsAgainst: 52, goalDifference: 16, points: 78, form: "DLWWD" },

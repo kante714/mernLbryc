@@ -35,7 +35,7 @@ const HeroBanner = () => {
             Born To<br /><span className="text-claret-400">Lead</span>
           </h1>
           <p className="text-white/60 text-base leading-relaxed mb-8 max-w-lg">
-            Follow every match, get the latest news, and go behind the scenes with your Likhu Bhujee RYC.
+            Follow every match, get the latest news, and go behind the scenes with your LikhuBhujee Ramechhap.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link to="/matches" className="btn-claret px-8 py-3">Fixtures</Link>

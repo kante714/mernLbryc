@@ -1,6 +1,6 @@
-# Likhu Bhujee Ramechhap Youth Club — MERN Application
+# LikhuBhujee Ramechhap — MERN Application
 
-Official Likhue Bhujee Ramechhap Youth Club website clone built with the MERN stack.
+Official LikhueBhujee Ramechhap website clone built with the MERN stack.
 
 ## Tech Stack
 - **Frontend**: React 18 + Vite + Tailwind CSS + React Router v6

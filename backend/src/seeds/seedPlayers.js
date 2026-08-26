@@ -5,7 +5,7 @@ const players = [
     position: 'goalkeeper', squad: 'men', shirtNumber: 1,
     nationality: 'Nepal', height: '5\'6"',
     photoAsset: { secureUrl: 'https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=400&h=533&fit=crop&crop=face', resourceType: 'image' },
-    bio: 'Prabat Rai is a highly rated Nepal international goalkeeper who joined Likhu Bhujee Ramechhap Youth Club. Known for his commanding presence and shot-stopping ability.',
+    bio: 'Prabat Rai is a highly rated Nepal international goalkeeper who joined LikhuBhujee Ramechhap. Known for his commanding presence and shot-stopping ability.',
     stats: { appearances: 38, goals: 0, assists: 0, cleanSheets: 12, yellowCards: 1, redCards: 0 },
   },
   {
@@ -13,7 +13,7 @@ const players = [
     position: 'goalkeeper', squad: 'men', shirtNumber: 13,
     nationality: 'Nepal', height: '5\'9"',
     photoAsset: { secureUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=533&fit=crop&crop=face', resourceType: 'image' },
-    bio: 'Experienced Nepal goalkeeper providing competition and cover for the number one shirt at Likhu Bhujee Ramechhap Youth Club.',
+    bio: 'Experienced Nepal goalkeeper providing competition and cover for the number one shirt at LikhuBhujee Ramechhap.',
     stats: { appearances: 10, goals: 0, assists: 0, cleanSheets: 3, yellowCards: 0, redCards: 0 },
   },
 
@@ -23,7 +23,7 @@ const players = [
     position: 'defender', squad: 'men', shirtNumber: 2,
     nationality: 'Nepal', height: '5\'7"',
     photoAsset: { secureUrl: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=400&h=533&fit=crop&crop=face', resourceType: 'image' },
-    bio: 'Nepal international right-back known for his energy and athleticism. Ashim Mahat is a key part of the Likhu Bhujee Ramechhap Youth Club backline.',
+    bio: 'Nepal international right-back known for his energy and athleticism. Ashim Mahat is a key part of the LikhuBhujee Ramechhap backline.',
     stats: { appearances: 34, goals: 1, assists: 5, cleanSheets: 0, yellowCards: 4, redCards: 0 },
   },
   {
@@ -145,7 +145,7 @@ const players = [
     position: 'coaching-staff', squad: 'men', shirtNumber: null,
     nationality: 'Nepal',
     photoAsset: { secureUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=533&fit=crop&crop=face', resourceType: 'image' },
-    bio: 'Abiraj Sunuwar is the current Head Manager of Likhu Bhujee RYC. He brings significant experience and a clear tactical identity to the club.',
+    bio: 'Abiraj Sunuwar is the current Head Manager of LikhuBhujee Ramechhap. He brings significant experience and a clear tactical identity to the club.',
     stats: { appearances: 0, goals: 0, assists: 0, cleanSheets: 0, yellowCards: 0, redCards: 0 },
   },
   {

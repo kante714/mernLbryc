@@ -67,7 +67,7 @@ const videos = [
     duration: '6:22',
     premium: false,
     publishedAt: daysAgo(2),
-    description: 'Watch all the action from Likhu Bhujee RYC Women\'s 1-0 win over We Are Brothers Women.',
+    description: 'Watch all the action from LikhuBhujee Ramechhap Women\'s 1-0 win over We Are Brothers Women.',
   },
   {
     title: 'ACADEMY: Under-18 Highlights vs Bhamti Bhandar',
