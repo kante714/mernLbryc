@@ -31,8 +31,8 @@ const NewsSection = () => {
       {!loading && !error && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Featured large card */}
-          <div className="lg:col-span-2 lg:row-span-2">
-            {articles[0] && <NewsCard article={articles[0]} variant="featured" />}
+          <div className="lg:col-span-2">
+            {articles[0] && <NewsCard article={articles[0]} variant="featured" fillHeight/>}
           </div>
 
           {/* Side cards */}
